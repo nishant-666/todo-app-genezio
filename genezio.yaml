@@ -1,0 +1,14 @@
+name: todo-app
+region: us-east-1
+language: ts
+cloudProvider: genezio
+scripts:
+  preBackendDeploy: npm install
+  preFrontendDeploy: npm run install-prod-sdk && npm install && npm run build
+frontend:
+  path: ./client/public
+  subdomain: red-musical-bee
+packageManager: npm
+workspace:
+  backend: ./server
+  frontend: ./client
